@@ -1,13 +1,13 @@
 from fastapi import FastAPI, Depends, status, HTTPException
-from cipher import encode, decode
+from cipher import caesar
 from api_auth import user_auth
 
 app = FastAPI()
 
-@app.get("/encode/msg={to_encode}&shift={shift}")
-async def enc(to_encode: str, shift: int,username: str = Depends(user_auth)):
-    return {"message": encode(to_encode, shift)}
+@app.get("/encode/msg={phrase}&shift={shift}")
+async def enc(phrase: str, shift: int,username: str = Depends(user_auth)):
+    return {"message": caesar(phrase, shift)}
 
-@app.get("/decode/msg={to_decode}&shift={shift}")
-async def dec(to_decode: str, shift: int,username: str = Depends(user_auth)):
-    return {"message" : decode(to_decode, shift)}
+@app.get("/decode/msg={phrase}&shift={shift}")
+async def dec(phrase: str, shift: int,username: str = Depends(user_auth)):
+    return {"message" : caesar(phrase, -abs(shift))}
