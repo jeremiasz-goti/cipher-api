@@ -15,9 +15,6 @@ shift = 5
 
 headers = {'Authorization': 'Basic ' + creds64_string}
 
-def test_home():
-    response = client.get('/', headers=headers)
-    assert response.status_code == 200
 
 def test_Encode(phrase=phrase, shift=shift, headers=headers):
     response = client.get('/encode/msg={}&shift={}'.format(phrase, shift), headers=headers)
@@ -28,6 +25,16 @@ def test_Decode(phrase=phrase, shift=shift, headers=headers):
     response = client.get('/decode/msg={}&shift={}'.format(shifted, shift), headers=headers)
     assert response.status_code == 200
     assert response.json() == {"message": phrase}
+
+def test_Encode(phrase=phrase, shift=shift):
+    response = client.get('/encode/msg={}&shift={}'.format(phrase, shift))
+    assert response.status_code == 401
+
+def test_Decode(phrase=phrase, shift=shift):
+    response = client.get('/decode/msg={}&shift={}'.format(shifted, shift))
+    assert response.status_code == 401
+
+
 
 
     
