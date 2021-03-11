@@ -16,7 +16,6 @@ def encode(phrase, shift):
     for i in phrase:
         if ord(i) in specials:
             special_index = specials.index(ord(i))
-            print(special_index)
             msg += specials_repl[special_index]
         else:
             msg += shifted[chars.index(i)]
