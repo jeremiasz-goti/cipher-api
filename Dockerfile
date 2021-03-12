@@ -1,10 +1,10 @@
-FROM tiangolo/uvicorn-gunicorn-fastapi:python3.6-slim
+FROM tiangolo/uvicorn-gunicorn-fastapi:python3.6
 
 
 COPY ./src /app/src
-COPY requirements.txt /app
+COPY requirements.txt /app/src
 
-WORKDIR /app
+WORKDIR /app/src
 
 RUN pip3 install -r requirements.txt
 
