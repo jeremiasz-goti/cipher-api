@@ -18,7 +18,7 @@ app = FastAPI(
 )
 
 # Tags for Swagger docs
-tags_metadata = [
+tags_metadata = 
     {
         "name": "Encode",
         "description": "Method for encoding data",
@@ -26,11 +26,11 @@ tags_metadata = [
     {
         "name": "Decode",
         "description": "Method for decoding data",
-    },
-]
+    }
+
 
 # Encode endpoint - takes str(phrase) and int(shift) and runs it through encode method
-@app.get("/encode/msg={phrase}&shift={shift}", tags=["Encode"])
+@app.get("/encode/msg={phrase}&shift={shift}", tags=tags_metadata["Encode"])
 async def Encode(phrase: str, shift: int,username: str = Depends(user_auth)):
     return {"message": encode(phrase, abs(shift))}
 

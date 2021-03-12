@@ -16,6 +16,8 @@ Cipher Api is using:
 
 ## Installation
 
+# Local
+
 Clone repository
 
 ```sh
@@ -31,7 +33,7 @@ cd src
 uvicorn main:app --reload
 ```
 
-## Docker
+# Docker
 
 To deploy cypher-api in a Docker container use:
 
@@ -49,7 +51,7 @@ your host. In this example, we simply map port 8000 of the host to
 port 8000 of the Docker (or whatever port was exposed in the Dockerfile):
 
 ```sh
-docker run -d --name test -p 8000:8000 cipher-api:1.0
+docker run -d --name cipher-api-container -p 8000:8000 cipher-api:1.0
 ```
 
 Verify the deployment by navigating to your server address in
