@@ -1,6 +1,6 @@
 # Cipher Api
 
-Cypher API its and app for encoding and decoding data using Caesar Cipher. Build with FastApi
+Cypher API its an app for encoding and decoding data using Caesar Cipher. Build with FastApi
 
 ## Features
 
