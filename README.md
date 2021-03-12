@@ -59,6 +59,10 @@ your preferred browser.
 127.0.0.1:8000/docs
 ```
 
+## Authorisation
+
+Cypher-api uses Basic Auth for authorisation. For testing, use dev:dev as credentials.
+
 ## To do
 
 - implement more complex cryptographic solution
