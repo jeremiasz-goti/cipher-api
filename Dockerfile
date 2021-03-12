@@ -1,4 +1,5 @@
-FROM python:3.6-slim
+FROM tiangolo/uvicorn-gunicorn-fastapi:python3.6-slim
+
 
 COPY ./src /app/src
 COPY requirements.txt /app
