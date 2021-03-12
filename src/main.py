@@ -6,8 +6,9 @@ Main app file that contains routings and main methods
 
 from fastapi import FastAPI, Depends, status, HTTPException
 from fastapi.responses import RedirectResponse
-from api_auth.api_auth import user_auth
-from cipher.cipher import encode, decode
+from cipher import encode, decode
+from api_auth import user_auth
+
 
 # FastApi init
 app = FastAPI(
