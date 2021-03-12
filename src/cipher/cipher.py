@@ -2,12 +2,16 @@
 
 Caesar Cipher implementation
 
+
+
 """
 import string
 
+# generating lists
 chars = [ x for x in string.ascii_letters + string.digits ]
 specials = [ ord(x) for x in string.whitespace + string.punctuation]
 specials_repl = [ chr(x) for x in range(256,294)]
+
 
 def encode(phrase, shift):
     shifted = ((lambda l, n: l[n:] + l[:n])(chars, shift))    

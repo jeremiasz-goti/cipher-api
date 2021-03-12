@@ -1,20 +1,22 @@
-from fastapi import FastAPI, Depends, status, HTTPException
-from fastapi.responses import RedirectResponse
-from cipher import encode, decode
-from api_auth import user_auth
-
 """
 
 Main app file that contains routings and main methods
 
 """
 
+from fastapi import FastAPI, Depends, status, HTTPException
+from fastapi.responses import RedirectResponse
+from api_auth.api_auth import user_auth
+from cipher.cipher import encode, decode
+
+# FastApi init
 app = FastAPI(
     title = "Cipher Api",
     description = "Caesar cipher api",
     version = "1.0.0"
 )
 
+# Tags for Swagger docs
 tags_metadata = [
     {
         "name": "Encode",
